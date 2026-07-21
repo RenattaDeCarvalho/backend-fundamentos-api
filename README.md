@@ -1,173 +1,124 @@
 # Backend Fundamentos API
 
-Projeto desenvolvido para revisão dos fundamentos de Backend utilizando Node.js, Express e TypeScript.
+## Sobre o projeto
 
-## Objetivo
+Este projeto foi desenvolvido para praticar os primeiros conceitos de desenvolvimento Backend utilizando Node.js, Express e TypeScript.
 
-Este projeto tem como objetivo praticar conceitos fundamentais de desenvolvimento Backend, incluindo:
-
-* Criação de APIs REST
-* HTTP e métodos HTTP
-* Rotas
-* JSON
-* Controllers
-* Organização de projetos Node.js
-* TypeScript
-* Git e GitHub
-
-Os dados são armazenados em memória, sem utilização de banco de dados.
+A aplicação simula uma API simples para gerenciamento de estudantes utilizando um banco de dados em memória.
 
 ---
 
-## Tecnologias Utilizadas
+## Tecnologias utilizadas
 
-* Node.js
-* Express
-* TypeScript
-* ts-node-dev
+- Node.js
+- Express
+- TypeScript
 
 ---
 
-## Instalação
+## Como executar o projeto
 
-Clone o repositório:
+1. Clone este repositório.
 
-```bash
-git clone <url-do-repositorio>
-```
-
-Acesse a pasta do projeto:
-
-```bash
-cd backend-fundamentos-api
-```
-
-Instale as dependências:
+2. Instale as dependências:
 
 ```bash
 npm install
 ```
 
----
-
-## Execução
-
-Iniciar aplicação em modo desenvolvimento:
+3. Execute a aplicação:
 
 ```bash
 npm run dev
 ```
 
-A aplicação ficará disponível em:
+O servidor será iniciado em:
 
-```txt
+```
 http://localhost:3000
 ```
 
 ---
 
-## Estrutura do Projeto
+## Rotas disponíveis
 
-```txt
-src/
-├── controllers/
-│   └── StudentController.ts
-│
-├── data/
-│   └── students.ts
-│
-├── routes/
-│   ├── health.routes.ts
-│   ├── welcome.routes.ts
-│   └── student.routes.ts
-│
-└── server.ts
-```
+### GET /health
+
+Verifica se a API está funcionando.
 
 ---
 
-## Rotas
+### GET /students
 
-### Health Check
+Retorna todos os estudantes cadastrados.
 
-```http
-GET /health
-```
+---
 
-Resposta:
+### POST /students
+
+Cadastra um novo estudante.
+
+Exemplo de requisição:
 
 ```json
 {
-  "status": "ok"
+  "name": "Maria"
 }
 ```
 
 ---
 
-### Welcome
+### GET /students/:id
 
-```http
-GET /welcome
+Busca um estudante pelo seu ID.
+
+Exemplo:
+
 ```
-
-Resposta:
-
-```json
-{
-  "message": "Bem-vinda ao Backend!"
-}
+/students/1
 ```
 
 ---
 
-### Listar alunos
+### GET /students/search?name=
 
-```http
-GET /students
+Busca estudantes pelo nome.
+
+Exemplo:
+
 ```
-
-Resposta:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Renata"
-  }
-]
+/students/search?name=mar
 ```
 
 ---
 
-### Cadastrar aluno
+## Documentação da API
 
-```http
-POST /students
+Após iniciar a aplicação, acesse:
+
+```
+http://localhost:3000/docs
 ```
 
-Body:
-
-```json
-{
-  "name": "Ana"
-}
-```
-
-Resposta:
-
-```json
-{
-  "id": 2,
-  "name": "Ana"
-}
-```
+para visualizar a documentação criada com Swagger.
 
 ---
 
-## Observações
+## Observação
 
-Os dados são armazenados apenas em memória através de um array.
+Este projeto utiliza um banco de dados em memória. Isso significa que os dados são armazenados apenas enquanto a aplicação estiver em execução. Ao reiniciar o servidor, todas as informações cadastradas serão perdidas.
 
-Ao reiniciar a aplicação, todos os dados adicionados durante a execução serão perdidos.
+---
 
-Este comportamento é intencional, pois o objetivo deste projeto é praticar os fundamentos antes da introdução de bancos de dados.
+## O que foi praticado
+
+- Criação de uma API com Express
+- Organização em camadas
+- Criação de rotas
+- Controllers
+- Banco de dados em memória
+- Requisições GET e POST
+- Uso de Route Params (`req.params`)
+- Uso de Query Params (`req.query`)
+- Introdução ao TypeScript
+- Documentação da API com Swagger
