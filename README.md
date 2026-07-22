@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido para praticar os primeiros conceitos de desenvolvimento Backend utilizando Node.js, Express e TypeScript.
+Este projeto foi desenvolvido para ensinar os primeiros conceitos de desenvolvimento Backend utilizando Node.js, Express e TypeScript.
 
 A aplicação simula uma API simples para gerenciamento de estudantes utilizando um banco de dados em memória.
 
